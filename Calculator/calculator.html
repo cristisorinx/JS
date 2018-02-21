@@ -1,0 +1,56 @@
+<html>
+	<head>
+	<title id="title">This is My Calculator</title>
+	<script type="text/javascript" src="calcScript.js">
+	</script>
+	<link rel="stylesheet" type="text/css" href="calculatorCSS.css">
+	</head>
+
+	<body>
+	<h1 style="color: blue;text-align: center;font-size: 50;font-family: Courier New;"><b>Calculator</b></h1>	
+
+
+<div class="btn-group" style="width: auto;text-align: center">
+	<form name="Calculator">
+		<input class="Display" id="display" name="display" placeholder="0" style="width: 260px;height: 60px;font-size: 30;text-align: right">
+		<br>
+		<input type="button" value="C" onclick="Calculator.display.value = ''">
+		<input type="button" value="x²" onclick="btnsquare()">
+		<input type="button" value="x^y" onclick="btnxaty()" style="padding: 6px 6px">
+		<input type="button" value="-" onclick="btnsub()">
+		<br>
+
+		<input type="button" value="7" onclick="Calculator.display.value +='7'">
+		<input type="button" value="8" onclick="Calculator.display.value +='8'">
+		<input type="button" value="9" onclick="Calculator.display.value += '9'">
+		<input type="button" value ="+" onclick="btnadd()">
+		<br>
+
+		<input type="button" value="4 " onclick="Calculator.display.value += '4'">
+		<input type="button" value="5" onclick="Calculator.display.value += '5'">
+		<input type="button" value="6" onclick="Calculator.display.value += 6">
+		<input type="button" value="/" onclick="btndiv()">
+		<br>
+
+		<input type="button" value="1" onclick="Calculator.display.value += '1'">
+		<input type="button" value="2" onclick="Calculator.display.value += '2'">
+		<input type="button" value="3" onclick="Calculator.display.value += '3'">
+		<input type="button" value="*" onclick="btnmul()">
+		<br>
+
+		<input type="button" value="sqrt" onclick="btnsqrt()" style="padding: 4px 4px">
+		<input type="button" value="0" onclick="Calculator.display.value += '0'">
+		<input type="button" value="." onclick="document.Calculator.display.value += '.'">
+		<input type="button" value="=" onclick="btnequal()">
+		<br>
+	</form>
+</div>
+
+	<form name="istoric">
+		<!--<textarea name="text" readonly="true" wrap="soft" cols="60" rows="20"></textarea> -->
+		<textarea name ="text"></textarea> 
+	</form>
+		<div name="textarea"></div>
+	</body>
+
+</html>
