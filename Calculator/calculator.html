@@ -11,12 +11,13 @@
 	
 	<h1>Calculator</h1>	
 
-<div class="btn-group" style="width: auto;text-align: center">
+<div class="btn-group" id="calculator">
 	
-	<form name="Calculator" id="calculator">
-		<textarea name ="textHistory" id="textHistory" readonly="readonly"></textarea> 
+	<input type="button" value="bin" id="bin" onclick="changeButton()">
+	<input type="button" value="hex" id="hex" onclick="hexConvertion()">
+	<form>
 		<!-- Display2-->
-		<input id="display2" name="display2" type="text" placeholder="0" readonly="readonly">
+		<input id="display2" name="display2" type="text" readonly="readonly">
 		<br>
 		<!-- Display -->
 		<input id="display" name="display" type="text" value="0" readonly="readonly">
@@ -41,15 +42,15 @@
 		<input type="button" value="4" onclick="displayKey('4')">
 		<input type="button" value="5" onclick="displayKey('5')">
 		<input type="button" value="6" onclick="displayKey('6')">
-		<input type="button" value="*" onclick="btnmul()">
+		<input type="button" value="*" onclick="btnmul('*')">
 		<input type="button" value="÷" onclick="btndiv('/')">
 		<br>
 		<!-- Fourth row of buttons -->
 		<input type="button" value="1" onclick="displayKey('1')">
 		<input type="button" value="2" onclick="displayKey('2')">
 		<input type="button" value="3" onclick="displayKey('3')">
-		<input type="button" value="+" onclick="btnadd('+')">
-		<input type="button" value="-" onclick="btnsub('-')">
+		<input type="button" value="+" onclick="btnadd()">
+		<input type="button" value="-" onclick="btnsub()">
 		<br>
 		<!-- Fifth row of buttons-->
 		<input type="button" value="±" onclick="btnneg()" style="padding: 4px 4px">
@@ -63,7 +64,7 @@
 
 	<!-- History textarea -->
 	<form name="history">
-		<!--<textarea name ="textHistory" id="textHistory" readonly="readonly"></textarea> -->
+		<textarea name ="textHistory" id="textHistory" readonly="readonly"></textarea>
 	</form>
 
 	</body>
