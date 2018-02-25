@@ -13,8 +13,6 @@
 
 <div class="btn-group" id="calculator">
 	
-	<input type="button" value="bin" id="bin" onclick="changeButton()">
-	<input type="button" value="hex" id="hex" onclick="hexConvertion()">
 	<form>
 		<!-- Display2-->
 		<input id="display2" name="display2" type="text" readonly="readonly">
@@ -25,9 +23,9 @@
 		<!-- First row of buttons -->
 		<input type="button" value="Hst" style="padding: 4px 4px" onclick="popUpHistory()">
 		<input type="button" value="<[x]" onclick="btndel()" style="padding: 4px 4px">
-		<input type="button" value="%" onclick="btnrst('%')" style="padding: 4px 4px">
-		<input type="button" value="x^y" onclick="btnxaty('^')" style="padding: 6px 6px">
-		<input type="button" value="n!" onclick="btnfact()">
+		<input type="button" value="%" id="negate" onclick="btnrst()" style="padding: 4px 4px">
+		<input type="button" value="x^y" id="xybin" onclick="btnxaty()" style="padding: 6px 6px">
+		<input type="button" value="n!" id="facthex" onclick="btnfact()">
 		<br>
 		<!-- Second row of buttons -->
 		<input type="button" value="7" onclick="displayKey('7')">
@@ -53,7 +51,7 @@
 		<input type="button" value="-" onclick="btnsub()">
 		<br>
 		<!-- Fifth row of buttons-->
-		<input type="button" value="±" onclick="btnneg()" style="padding: 4px 4px">
+		<input type="button" value="↑" onclick="changeButton()" style="padding: 4px 4px">
 		<input type="button" value="0" onclick="displayKey('0')">
 		<input type="button" value="." onclick="displayKey('.')">
 		<input type="button" value="=" onclick="btnequal()">

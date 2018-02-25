@@ -3,6 +3,8 @@
 		var history = document.getElementById('textHistory');
 
 		var aux ;
+		var change = false;
+
 
 	//FUNCTION FOR DISPLAYING A CARACTER/NUMBER
 		var displayKey = function(x){
@@ -13,11 +15,13 @@
 				box2.value = '';
 			}
 		}
+
 	//FUNCTION FOR SAVING SOME VALUES ON DISPLAY2
 		var saveValue = function(x){
 			box2.value += box.value + x;
 			box.value = '';
 		}
+
 	//FUNCTION FOR - BUTTON
 		var btnsub = function (){
 			if(box.value == '0' || box.value == '')
@@ -25,22 +29,27 @@
 			else
 			saveValue('-');
 		}
+
 	//FUNCTION FOR + BUTTON
 		var btnadd = function(){
 			saveValue('+');
 		}
+
 	//FUNCTION FOR / BUTTON	
 		var btndiv = function(x){
 			saveValue(x);
 		}
+
 	//FUNCTION FOR %(Mod) BUTTON
-		var btnrst = function(x){
-			saveValue(x);
+		var btnrst = function(){
+			saveValue('%');
 		}
+
 	//FUNCTION FOR * BUTTON
 		var btnmul = function(X){
 			saveValue(x);
 		}
+
 	//FUNCTION FOR = BUTTON
 		var btnequal = function(){
 			//find the operation we want to do
@@ -59,6 +68,7 @@
 			box2.value = '';
 			}
 		}
+
 	//FUNCTION FOR CALCULATE X at Y
 		var btnequal2 = function(){
 			var str1 = box2.value;
@@ -73,6 +83,7 @@
 			document.history.textHistory.value += str1 + y + ' = ' + result + '\n';
 			box2.value = '';
 		}
+
 	//FUNCTION FOR SQRT BUTTON
 		var btnsqrt = function(){
 			var x = box.value;
@@ -81,6 +92,7 @@
 			box.value = result;
 			document.history.textHistory.value += '√' + x + ' = ' + result + '\n';
 		}
+
 	//FUNCTION FOR SQUARE BUTTON
 		var btnsquare = function(){
 			document.history.textHistory.value += box.value;
@@ -90,10 +102,12 @@
 			box.value = result;
 			document.history.textHistory.value += '^2 = ' + result + '\n';
 		}
+
 	//FUNCTION FOR XatY BUTTON
-		var btnxaty = function(x){
-			saveValue(x);
+		var btnxaty = function(){
+			saveValue('^');
 		}
+
 	//FUNCTION FOR FACTORIAL BUTTON
 		var btnfact = function(){
 			var fact=1;
@@ -103,7 +117,6 @@
 				box.value = 1;
 				document.history.textHistory.value += n + '! = ' + 1 +'\n';
 			}else{
-
 				for (var i = 1;i<=n;i++)
 					fact *= i;
 
@@ -111,25 +124,52 @@
 				document.history.textHistory.value += n + '! = ' + fact + '\n';
 			}
 		}
+
 	//FUNCTION FOR DELET BUTTON/BACKSPACE BUTTON
 		var btndel = function(){
 				var v = box.value;
 				var len = v.length-1;
 				var newV = v.substring(0,len);
-
 				box.value = newV;
 			}
+
 	//FUNCTION FOR SHOW AND HIDE THE HISTORY OF OPERATION DONE IN CALCULATOR
 		var popUpHistory =function(){
-
 		var currentName = document.getElementById('textHistory');
 
 		if (currentName.style.visibility != 'visible')
 			currentName.style.visibility = 'visible' ;
 		else
 			currentName.style.visibility = 'hidden' ;
-			
 		}
+
+	//FUNCTION FOR CHANGING BUTTONS 
+		var changeButton = function (){
+			var a = document.getElementById('facthex');
+			var b = document.getElementById('xybin');
+			var c = document.getElementById('negate');
+
+			if(!change){
+				a.value ='HEX';
+				a.onclick = hexConvertion;
+				b.value = 'BIN';
+				b.onclick = binaryConvertion;
+				c.value = '±';
+				c.onclick = btnneg;
+				change = true;
+			}
+
+			else{
+				a.value = 'n!';
+				a.onclick = btnfact;
+				b.value = 'x^y';
+				b.onclick = btnxaty;
+				c.value = '%';
+				c.onclick = btnrst;
+				change = false;
+			}
+		}
+
 	//FUNCTION FOR NEGATE BUTTON
 		var btnneg = function(){
 			var x = box.value;
@@ -152,6 +192,7 @@
 				document.history.textHistory.value += stringHistory + ' = ' + x + '\n';
 			}
 		}
+
 	//FUNCTION FOR HEXA CONVERTION FOR POZITIVE NUMBERS
 		var hexConvertion = function (){
 			var number = box.value;
@@ -174,16 +215,9 @@
 				j++;
 				i--;
 			}
+
+			box2.value = hexValue.join("");
 			document.history.textHistory.value += hexValue.join("") + '\n';
-
-		}
-
-		var changeButton = function (){
-			var a = document.getElementById('hex');
-			a.value ='+';
-			document.getElementById('hex').onclick = btnadd;
-			document.getElementById('bin').value = '-';
-			document.getElementById('bin').onclick = btnsub;
 		}
 
 	//FUNCTION FOR BINARY CONVERTION
@@ -205,6 +239,8 @@
 				bitsArray.push(number);
 
 				bitsArray.reverse();
+
+				box2.value = bitsArray.join("");
 				document.history.textHistory.value += bitsArray.join("");
 				document.history.textHistory.value +='\n';
 			}
