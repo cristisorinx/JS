@@ -1,8 +1,6 @@
 		var box = document.getElementById('display');
 		var box2 = document.getElementById('display2');
 		var history = document.getElementById('textHistory');
-
-		var aux ;
 		var change = false;
 
 
@@ -200,24 +198,28 @@
 			var valueArray = [];
 			var digits = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
 
-			while(number > 0){
-				rem = number % 16;
-				number = Math.floor(number / 16);
-				valueArray.push(rem);
-			}
-			var i = valueArray.length;
-			var j = 0;
-			var hexValue = [];
+			if(number >= 0){
+				while(number > 0){
+					rem = number % 16;
+					number = Math.floor(number / 16);
+					valueArray.push(rem);
+				}
+					var i = valueArray.length;
+					var j = 0;
+					var hexValue = [];
 
-			while (i > 0){
-				//document.history.textHistory.value +=  digits[valueArray.pop()];
-				hexValue[j] = digits[valueArray.pop()];
-				j++;
-				i--;
-			}
+				while (i > 0){
+					hexValue[j] = digits[valueArray.pop()];
+					j++;
+					i--;
+				}
 
-			box2.value = hexValue.join("");
-			document.history.textHistory.value += hexValue.join("") + '\n';
+				box2.value = hexValue.join("");
+				document.history.textHistory.value += 'HEX: ' + hexValue.join("") + '\n';
+			}else if (number < 0){
+				valueArray = (number).toString(16);
+				document.history.textHistory.value += 'HEX: ' + valueArray.join("") + '\n';
+			}
 		}
 
 	//FUNCTION FOR BINARY CONVERTION
@@ -228,10 +230,13 @@
 			var bitsArray = [];
 			var negbits;
 			var i = 0;
+			var aux = [];
 			
 			if(number > 0)
 			{
-				do{
+				aux = (number >>> 0).toString(2);
+				document.history.textHistory.value += 'BIN: ' + aux +'\n';
+				/*do{
 					rem = number % 2;
 					bitsArray.push(rem);
 					number = Math.floor(number / 2);
@@ -242,26 +247,27 @@
 
 				box2.value = bitsArray.join("");
 				document.history.textHistory.value += bitsArray.join("");
-				document.history.textHistory.value +='\n';
+				document.history.textHistory.value +='\n';*/
 			}
-		}
-				/*else if(number < 0){
-					number = ~number +1;
+				else if(number < 0){
+					
+				aux = (-3 >>> 0).toString(2);
+				box2.value = aux;
+				document.history.textHistory.value += 'BIN: ' + aux +'\n';
+					/*number = ~number + 1;
 					do{
 						rem = number % 2;
 						bitsArray.push(rem);
 						number = Math.floor(number / 2);
 					}while( number > 0);
+
 					bitsArray.push(number);
-					bitsArray.reverse();
+					aux = bitsArray.join("");
+					aux = ~aux + 1;
+					aux >>> 1;
+					//number = ~number + 1;
 
-					document.history.textHistory.value +='bits value = ' + (number).toString(2) +'\n';
-				
-					negbits = bitsArray.join("");
-					
-					document.history.textHistory.value +='bits value = ' + negbits +'\n';
-					negbits = negbits + 1;
-
-					document.history.textHistory.value +='negbits value = ' + negbits +'\n';
+					box2.value = aux;*/
 			}
-			document.history.textHistory.value +='bits value = ' + (number).toString(2) +'\n';	*/
+			
+		}
