@@ -191,7 +191,7 @@
 			}
 		}
 
-	//FUNCTION FOR HEXA CONVERTION FOR POZITIVE NUMBERS
+	//FUNCTION FOR HEXA CONVERTION 
 		var hexConvertion = function (){
 			var number = box.value;
 			var rem;
@@ -199,6 +199,7 @@
 			var digits = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
 
 			if(number >= 0){
+				//algoritmul initial -- mai jos am utilizat o functie din JS care face conversia
 				while(number > 0){
 					rem = number % 16;
 					number = Math.floor(number / 16);
@@ -217,13 +218,13 @@
 				box2.value = hexValue.join("");
 				document.history.textHistory.value += 'HEX: ' + hexValue.join("") + '\n';
 			}else if (number < 0){
+				//am utilizat in cazul de fata si functia de conversie care o pune la dispozitie JS
 				valueArray = (number).toString(16);
 				document.history.textHistory.value += 'HEX: ' + valueArray.join("") + '\n';
 			}
 		}
 
 	//FUNCTION FOR BINARY CONVERTION
-	//----!!!! HALF DONE !!!-----NEGATIVE NUMBERS CONVERTION MISSING
 		var binaryConvertion = function(){
 			var number = box.value;
 			var rem ;
@@ -234,8 +235,11 @@
 			
 			if(number > 0)
 			{
+				//la fel am uitilizat functia de conversie 
 				aux = (number >>> 0).toString(2);
 				document.history.textHistory.value += 'BIN: ' + aux +'\n';
+				
+				//aici am lasat si algoritmul pe care l-am implementat initial
 				/*do{
 					rem = number % 2;
 					bitsArray.push(rem);
@@ -246,28 +250,13 @@
 				bitsArray.reverse();
 
 				box2.value = bitsArray.join("");
-				document.history.textHistory.value += bitsArray.join("");
+				document.history.textHistory.value += 'BIN: ' + bitsArray.join("");
 				document.history.textHistory.value +='\n';*/
-			}
-				else if(number < 0){
+			}else if(number < 0){
 					
 				aux = (-3 >>> 0).toString(2);
 				box2.value = aux;
 				document.history.textHistory.value += 'BIN: ' + aux +'\n';
-					/*number = ~number + 1;
-					do{
-						rem = number % 2;
-						bitsArray.push(rem);
-						number = Math.floor(number / 2);
-					}while( number > 0);
-
-					bitsArray.push(number);
-					aux = bitsArray.join("");
-					aux = ~aux + 1;
-					aux >>> 1;
-					//number = ~number + 1;
-
-					box2.value = aux;*/
 			}
 			
 		}
