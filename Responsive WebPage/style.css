@@ -1,0 +1,192 @@
+body,html {
+  height: 100%;
+}
+
+/*Navigation bar 1 */
+#navbar1{
+	margin: 0px;
+	background-color: darkorange;
+	height: 12px;
+}
+
+#singLog a:hover {
+	color: black;
+}
+
+#call{
+	list-style-type: none;
+	font-family: "Verdana",  sans-serif;
+	font-style: normal;
+	font-variant:normal;
+	font-size: 13px;
+	font-weight: bold;
+	padding-left: 75px;
+	
+
+}
+
+#call li{
+	display: inline;
+}
+
+#text{
+	font-family: "Verdana",  sans-serif;
+	font-style: normal;
+	font-variant:normal;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#number{
+	color: white;
+	font-family: "Verdana",  sans-serif;
+	font-style: normal;
+	font-variant:normal;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#acces{
+	font-family: "Verdana",  sans-serif;
+	font-style: normal;
+	font-variant:normal;
+	font-size: 13px;
+	font-weight: bold;
+	padding-right: 100px;
+}
+
+#singup a{
+	color: white;
+}
+
+/*Navigation bar 2 */
+#navbar2{
+	padding: 20px 50px;
+
+}
+#meniu{
+	font-family: "Verdana",  sans-serif;
+	font-style: normal;
+	font-variant:normal;
+	font-size: 13px;
+	font-weight: bold;
+	padding-right: 50px;
+}
+#submeniu{
+	list-style-type: none;
+	font-family: "Verdana",  sans-serif;
+	font-style: normal;
+	font-variant:normal;
+	font-size: 13px;
+	font-weight: bold;
+	display: none; 
+}
+
+#divbar a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+#meniu li a:hover {
+	display: inline-block;
+}
+
+#logo li{
+	margin: 0px;
+	display: inline;
+	font-family: "Verdana",  sans-serif;
+	font-style: normal;
+	font-variant:normal;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#a1{
+	color: black;
+}
+
+#a2{
+	color: darkorange;
+}
+/**/
+.container{
+	padding: 20px;
+	position: relative;
+	
+}
+.container p{
+	font-size: 20px;
+	font-family: "Times New Roman", serif;
+}
+
+#infotext{
+	margin:0px 25px; 
+}
+
+/*CONTACT US*/
+#message{
+	height: 150px;
+	resize: vertical;
+	min-height: 150px;
+}
+
+#contact,#reach{
+	width: 40vw;
+	margin: 25px;
+}
+
+#forms form{ 
+	margin-top: 8px;
+}
+
+#button{
+	color: white;
+	font-family: "Verdana",  sans-serif;
+	font-style: normal;
+	font-variant:normal;
+	font-size: 13px;
+	font-weight: bold;
+	background-color: darkorange;
+	width: 105px;
+	height: 40px;
+	margin-top: 8px;
+}
+
+/*REACH US*/
+#icons {
+
+	display: inline;
+	font-size: 33px;
+	margin-bottom: 10px;
+	align-items: left;
+
+}
+
+#adress{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}	
+
+#titleReach, #contactUs{
+	font-family: "Verdana",  sans-serif;
+	font-style: normal;
+	font-variant:normal;
+	font-size: 20px;
+	font-weight: normal;
+	border-bottom: 7px solid black;
+	color: darkorange;
+	text-transform: uppercase;
+}
+
+#l1{
+	line-height: 40px;
+}
+
+#l2,#l3{
+	line-height: 20px;
+}
+
+#l4,#l5{
+	line-height: 20px;
+}

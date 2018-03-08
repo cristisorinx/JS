@@ -1,3 +1,21 @@
+/* 
+CSS Selector : 1. the element selector ->based on the element name(scriu pur si simplu : p , div etc.);
+			 	2. the id selector ->uses the id attribute of the HTML element to select the specific element
+			 		#idOfTheElement
+			 	3. the class selector ->uses the class attribute of the HTML element to select the elements
+			 		.nameOfTheClass
+			 	4. exemple: p.center ->only <p> elements with class="center" will be center-aligned
+			 		p.center {
+    					text-align: center;
+    					color: red;
+   					}
+   				5. grouping selectors ->If you have elements with the same style definitions you can group them like this :
+   					h1, h2, p {
+    					text-align: center;
+    					color: red;
+    				}
+*/
+
 body{
 	background-color : grey;
 }
@@ -14,3 +32,138 @@ body{
 	visibility: visible;
 	background-color: red;
 }
+
+
+#Text {
+	/* **border-style**
+	   --> can have up to 4 values : top-border , right-border, bottom-border, left-border;
+	   --> 4 values :top right bottom left;
+	   --> 3 values :top right-left bottom;
+	   --> 2 values :top-bottom right-left;
+	   --> 1 value : all four borders;
+	   --> types of borders : dotted, dashed, solid, double, groove, ridge, inset, outset, none, hidden;  */
+	border-style: dashed solid hidden double;
+	/*  **border-width**
+	--> the width of the borders (it can be set in : px, pt, cm, em etc. 
+		or pre-defined values : thin, medium, thick);
+	--> can have up to 4 values : top-border , right-border, bottom-border, left-border; */
+	border-width: 5px;
+	/*  **border-color**
+	--> used to set the color of the borders;
+	--> colors can be set by: name, Hex value, RGB(100,0,255), transparent;
+	--> can have up to 4 values : top-border , right-border, bottom-border, left-border;
+	--> If border-color is not set, it inherits the color of the element;
+	*/
+
+	/*The border property is a shorthand property for the following individual border properties:
+		border-width
+		border-style (required)
+		border-color
+
+		ex: border: 5px solid black;
+	*/
+
+	/* **Rounded Borders**
+	-->used to add rounded borders to an element;
+	*/
+	border-radius: 10px;
+
+	/* **Margins**
+	--> The CSS margin properties are used to create space around elements, outside of any defined borders.
+		All the margin properties can have the following values:
+
+		auto - the browser calculates the margin (horizontally center the element within its container.)
+		length - specifies a margin in px, pt, cm, etc.
+		% - specifies a margin in % of the width of the containing element
+		inherit - specifies that the margin should be inherited from the parent element
+		Tip: Negative values are allowed.
+	--> As well as the border the margin property has 4 values
+	--> Margin Collapse ->Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins.
+						This does not happen on left and right margins! Only top and bottom margins!
+	*/
+	margin:25px;
+
+	/* ** Padding**
+	-->padding properties are used to generate space around an element's content, inside of any defined borders.
+	-->All the padding properties can have the following values:
+		length - specifies a padding in px, pt, cm, etc.
+		% - specifies a padding in % of the width of the containing element
+		inherit - specifies that the padding should be inherited from the parent element
+	-->To keep the width at 300px, no matter the amount of padding, you can use the box-sizing property. This causes the element to maintain its width;
+		 if you increase the padding, the available content space will decrease.
+	-->can have up to 4 values : top,right,bottom,left padding(same as border and margin);
+	*/
+	padding: 50px;
+
+	/* **Outline**
+	-->An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out".
+	-->It has the same values and properties as the border (width,style,color)
+	-->One property that differenciate the outline from border is outline-offset ,that specifies the space between
+		an autline and the edge or border of an elemenet.
+	*/
+	outline: 15px solid yellow;
+	outline-offset: 5px;
+
+	/* **Text**
+	 Properties:
+		->color	Sets the color of text
+		->direction	Specifies the text direction/writing direction
+		->letter-spacing	Increases or decreases the space between characters in a text
+		->line-height	Sets the line height
+		->text-align	Specifies the horizontal alignment of text
+		->text-decoration	Specifies the decoration added to text
+		->text-indent	Specifies the indentation of the first line in a text-block
+		->text-shadow	Specifies the shadow effect added to text
+		->text-transform	Controls the capitalization of text
+		->text-overflow	Specifies how overflowed content that is not displayed should be signaled to the user
+		->unicode-bidi	Used together with the direction property to set or return whether the text should be overridden to support multiple languages in the same document
+		->vertical-align	Sets the vertical alignment of an element
+		->white-space	Specifies how white-space inside an element is handled
+		->word-spacing	Increases or decreases the space between words in a text
+	*/
+	color: blue;
+	letter-spacing: 2px;
+	text-align: center; /*right, left, center, justify*/
+	text-decoration: overline; /*underline,line-through,overline*/
+	text-transform: capitalize; /*uppercase, lowercase*/
+	word-spacing: 5px;
+	text-shadow: 2px 2px red;
+
+	/* ** Font **
+		->font	Sets all the font properties in one declaration(font-style, font-vatiant, font-weight, font-size, font-family)
+		->font-family	Specifies the font family for text
+		->font-size	Specifies the font size of text
+		->font-style	Specifies the font style for text
+		->font-variant	Specifies whether or not a text should be displayed in a small-caps font
+		->font-weight	Specifies the weight of a font
+	*/
+	/*Responsive Font Size -> use the vw unit which means "viewport width"
+		exemple: font-size:10vw*/ 
+	font-family: serif; /*sans-serif,monospace*/
+	font-size: 30px;
+	font-style: normal; /*normal, oblique, italic*/
+	font-weight: bold; /*normal*/
+	font-variant: normal; /*small-caps*/
+}
+
+/*Links can be styled with any CSS property (e.g. color, font-family, background, etc.). */
+a:link {
+	color: red;
+	text-decoration: none;
+}
+
+a:visited {
+	
+	text-decoration: none;
+}
+
+a:active {
+	color: green;
+	
+}
+
+
+
+/* **Lists**
+	
+ */
