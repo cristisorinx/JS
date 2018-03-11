@@ -1,6 +1,23 @@
 body,html {
   height: 100%;
 }
+ul.breadcrumb {
+	padding-top: 20px;
+	list-style: none;
+	padding-left: 129px;
+	background-color: #ffffff;
+	width: 38vw;
+}
+
+ul.breadcrumb li a{
+	color: rgb(182,182,182);
+	font-weight: bold;
+}
+
+ul.breadcrumb li a:hover{
+	color: rgb(105,105,105);
+	text-decoration: none;
+}
 
 .dropdown-content {
     display: none;
@@ -139,7 +156,7 @@ body,html {
 }
 /**/
 .container{
-	padding: 20px;
+	padding: 0px 20px 20px;
 	position: relative;
 	
 }
